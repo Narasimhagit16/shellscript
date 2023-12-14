@@ -2,7 +2,7 @@
 
 FRUITS=( "apple" "banana" "orrange" )
 
-for fruite in $FRUITS
+for frut in ${FRUITS}
 do
-    echo "$fruite"
+    echo "$frut"
 done
