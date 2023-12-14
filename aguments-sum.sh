@@ -5,7 +5,7 @@ then
     echo "number of argument passed is 0"
     exit 1
 fi
-NUM=$1
+NUM1=$1
 NUM2=$2
 NUM3=$3
 
