@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DATE=( date )
+echo "$0 script started executing at $DATE"
+
 if [ $# -lt 3 ]
 then
     echo "number of argument passed is 0"
