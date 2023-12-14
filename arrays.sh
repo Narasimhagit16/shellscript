@@ -7,7 +7,7 @@ echo "1st fruite" ${FRUITS[0]}
 echo "2n fruite" ${FRUITS[1]}
 echo "3rd fruite" ${FRUITS[2]}
 
-for frut in ${FRUITS[]}
+for i in $FRUITS
 do
-    echo "$frut"
+    echo "${FRUITS[i]}"
 done
