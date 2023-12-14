@@ -1,8 +1,8 @@
 #!/bin/bash
 
-FRUITS=("apple" "banana" "orrange")
+FRUITS=( "apple" "banana" "orrange" )
 
-for fruite in $FRUITS{}
+for fruite in $FRUITS
 do
     echo "$fruite"
 done
