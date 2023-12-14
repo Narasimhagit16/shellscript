@@ -1,3 +1,3 @@
 DATE=$( date -u )
 
-echo "Date is $date"
+echo "Date is $DATE"
