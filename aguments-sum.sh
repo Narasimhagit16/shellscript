@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 1 ]
+if [ $# -lt 3 ]
 then
     echo "number of argument passed is 0"
     exit 1
