@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=( date )
+DATE=$( date )
 echo "$0 script started executing at $DATE"
 
 if [ $# -lt 3 ]
