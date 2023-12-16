@@ -34,15 +34,15 @@ Validate()
 
 cp /home/centos/shellscript/RoboshopShell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
-yum list insatlled mongodb-org &>>$LOGFILE
+#yum list insatlled mongodb-org &>>$LOGFILE
 
-if [ $? -ne 0 ]
-then
+#if [ $? -ne 0 ]
+#then
     dnf install mongodb-org -y &>>$LOGFILE
     Validate $? "installing MongoDB"
-else
-    echo -e "MongoDB already installed..$Y SKIPPING $N"
-fi
+#else
+#    echo -e "MongoDB already installed..$Y SKIPPING $N"
+#fi
 
 systemctl enable mongod &>>$LOGFILE
 
