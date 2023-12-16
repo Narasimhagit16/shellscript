@@ -35,9 +35,9 @@ Validate()
 
 #vim /etc/yum.repos.d/mongo.repo
 
-cp /home/centos/shellscript/RoboshopShell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/shellscript/RoboshopShell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
-yum list insatlled mongodb 
+yum list insatlled mongodb &>>$LOGFILE
 
 if [ $? -ne 0 ]
 then
