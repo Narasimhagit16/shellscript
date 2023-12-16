@@ -51,7 +51,7 @@ else
 fi
 
 
-mkdir /app &>>$LOGFILE
+mkdir -p /app &>>$LOGFILE
 
 Validate $? "Creating app directory"
 
@@ -63,7 +63,7 @@ cd /app &>>$LOGFILE
 
 Validate $? "Changing app directory"
 
-unzip /tmp/catalogue.zip &>>$LOGFILE
+unzip -o /tmp/catalogue.zip &>>$LOGFILE
 
 Validate $? "Unzipping Catalogue Application code"
 
