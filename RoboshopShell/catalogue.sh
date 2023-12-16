@@ -1,3 +1,4 @@
+#!/bin/bash
 ID=$( id -u )
 
 R="\e[31m"
@@ -96,6 +97,6 @@ dnf install mongodb-org-shell -y &>>$LOGFILE
 
 Validate $? "Intsalling mongo client"
 
-#mongo --host mongodb.nariops.online </app/schema/catalogue.js &>>$LOGFILE
+mongo --host mongodb.nariops.online </app/schema/catalogue.js &>>$LOGFILE
 
-#Validate $? "Loading scheme into MongoDB"
+Validate $? "Loading scheme into MongoDB"
