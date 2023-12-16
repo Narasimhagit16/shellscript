@@ -31,7 +31,7 @@ Validate()
 
 dnf module disable nodejs -y &>>$LOGFILE
 
-Validate $? "Disabile current nodeJS version"
+Validate $? "Disable current nodeJS version"
 
 dnf module enable nodejs:18 -y &>>$LOGFILE
 
@@ -41,9 +41,15 @@ dnf install nodejs -y &>>$LOGFILE
 
 Validate $? "Installing nodeJS"
 
-useradd roboshop &>>$LOGFILE
+id roboshop &>>$LOGFILE
 
-Validate $? "Adding USER roboshop"
+if [ $? -ne 0 ]
+then
+    useradd roboshop &>>$LOGFILE
+else
+    echo "roboshop user exist"
+fi
+
 
 mkdir /app &>>$LOGFILE
 
@@ -67,6 +73,9 @@ Validate $? "Installing dependncies"
 
 #vim /etc/systemd/system/catalogue.service
 
+cp /home/centos/shellscript/RoboshopShell /etc/systemd/system/catalogue.service
+
+
 systemctl daemon-reload &>>$LOGFILE
 
 Validate $? "Reload daemon"
@@ -79,8 +88,7 @@ systemctl start catalogue &>>$LOGFILE
 
 Validate $? "Starting Catalogue service"
 
-cp /home/crntos/shellscript/  /etc/yum.repos.d/mongo.repo &>>$LOGFILE
-
+cp /home/centos/shellscript/RoboshopShell  /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
 Validate $? "Copying mongo repo file"
 
