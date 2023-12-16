@@ -73,7 +73,7 @@ Validate $? "Installing dependncies"
 
 #vim /etc/systemd/system/catalogue.service
 
-cp /home/centos/shellscript/RoboshopShell /etc/systemd/system/catalogue.service
+cp /home/centos/shellscript/RoboshopShell/catalogue.service /etc/systemd/system/catalogue.service
 
 
 systemctl daemon-reload &>>$LOGFILE
