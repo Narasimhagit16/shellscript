@@ -30,8 +30,16 @@ Validate()
 
 }
 
-yum install nginx  -y &>>$LOGFILE
+#yum install nginx  -y &>>$LOGFILE
 
-Validate $? "Installing GIT"
+#Validate $? "Installing GIT"
+
+for package in $@
+do
+    yum $package install -y &>>$LOGFILE
+    Validate $? "installing $package"
+done
+
+
 
 
