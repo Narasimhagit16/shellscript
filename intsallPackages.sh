@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
-LOGFILE="/tmp/$0-TIMESTAMP.log"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 R="\e[31m"
 G="\e[32m"
@@ -36,7 +36,7 @@ Validate()
 
 for package in $@
 do
-    yum $package install -y &>>$LOGFILE
+    yum  install $package -y &>>$LOGFILE
     Validate $? "installing $package"
 done
 
