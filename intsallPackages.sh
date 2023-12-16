@@ -36,8 +36,14 @@ Validate()
 
 for package in $@
 do
-    yum  install $package -y &>>$LOGFILE
-    Validate $? "installing $package"
+    yum list installed $package
+    if [ $? -ne 0 ]
+    then
+        yum  install $package -y &>>$LOGFILE
+        Validate $? "installing $package"
+    else
+        echo -e " $package already installed.. $Y SKIPPING $N"
+    fi
 done
 
 
