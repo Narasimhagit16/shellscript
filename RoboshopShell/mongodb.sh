@@ -2,7 +2,7 @@
 
 #vim /etc/yum.repos.d/mongo.repo
 
-cp /home/centos/shellscript/RoboshopShell/mogo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/shellscript/RoboshopShell/mongo.repo /etc/yum.repos.d/mongo.repo
 
 #dnf install mongodb-org -y 
 
