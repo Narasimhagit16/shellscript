@@ -30,7 +30,7 @@ Validate()
 
 }
 
-yum install nginx  -y &>>LOGFILE
+yum install nginx  -y &>>$LOGFILE
 
 Validate $? "Installing GIT"
 
