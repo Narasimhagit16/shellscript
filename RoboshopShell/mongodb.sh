@@ -42,11 +42,10 @@ yum list insatlled mongodb &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     dnf install mongodb-org -y &>>$LOGFILE
+    Validate $? "installing MongoDB"
 else
     echo "MongoDB already installed..$R SKIPPING $N"
 fi
-
-Validate $? "installing MongoDB"
 
 systemctl enable mongod &>>$LOGFILE
 
