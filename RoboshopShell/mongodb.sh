@@ -37,7 +37,7 @@ Validate()
 
 cp /home/centos/shellscript/RoboshopShell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
-yum list insatlled mongodb &>>$LOGFILE
+yum list insatlled mongodb-org &>>$LOGFILE
 
 if [ $? -ne 0 ]
 then
