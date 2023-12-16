@@ -44,7 +44,7 @@ then
     dnf install mongodb-org -y &>>$LOGFILE
     Validate $? "installing MongoDB"
 else
-    echo "MongoDB already installed..$R SKIPPING $N"
+    echo -e "MongoDB already installed..$R SKIPPING $N"
 fi
 
 systemctl enable mongod &>>$LOGFILE
