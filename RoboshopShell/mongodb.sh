@@ -22,10 +22,10 @@ Validate()
 {
     if [ $1 -ne 0 ]
     then
-        echo " $2 is.. $R FAILED $N"
+        echo -e " $2 is.. $R FAILED $N"
         exit 1
     else
-        echo " $2 is.. $G SUCCESS $N"
+        echo -e " $2 is.. $G SUCCESS $N"
     fi
 }
 
@@ -46,7 +46,7 @@ systemctl start mongod &>>$LOGFILE
 Validate $? "starting MongoDB"
 
 
-sed -i '/127.0.0.1/0.0.0.0/g'  /etc/mongod.conf &>>$LOGFILE
+sed -i 's/127.0.0.1/0.0.0.0/g'  /etc/mongod.conf &>>$LOGFILE
 
 Validate $? "giving external acces to  MongoDB"
 
