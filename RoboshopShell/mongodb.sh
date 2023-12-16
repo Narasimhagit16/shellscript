@@ -8,9 +8,6 @@ Y="\e[33m"
 N="\e[0m"
 
 
-
-
-
 TIMESTAMP=$( date +%F-%H-%M-%S ) 
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
@@ -44,7 +41,7 @@ then
     dnf install mongodb-org -y &>>$LOGFILE
     Validate $? "installing MongoDB"
 else
-    echo -e "MongoDB already installed..$R SKIPPING $N"
+    echo -e "MongoDB already installed..$Y SKIPPING $N"
 fi
 
 systemctl enable mongod &>>$LOGFILE
