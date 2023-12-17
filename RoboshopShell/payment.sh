@@ -40,37 +40,40 @@ else
     echo "roboshop user exist"
 fi
 
-mkdir /app 
+mkdir -p /app &>>$LOGFILE
 
 Validate $? "Creating app directory"
 
-curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip
+curl -L -o /tmp/payment.zip https://roboshop-builds.s3.amazonaws.com/payment.zip &>>$LOGFILE
 
 Validate $? "Downloading payment code"
 
-cd /app 
+cd /app &>>$LOGFILE
 
 Validate $? "Changing directory to app directory"
 
-unzip /tmp/payment.zip
+unzip -o /tmp/payment.zip &>>$LOGFILE
 
 Validate $? "Installing requirements"
 
-pip3.6 install -r requirements.txt
+pip3.6 install -r requirements.txt &>>$LOGFILE
 
 Validate $? "Installing requirements"
 
 #vim /etc/systemd/system/payment.service
+cp -o /home/centos/shellscript/RoboshopShell/payment.service /etc/systemd/system/payment.service &>>$LOGFILE
 
-systemctl daemon-reload
+Validate $? "Copying payment service"
+
+systemctl daemon-reload &>>$LOGFILE
 
 Validate $? "Reload Payment Daemon service"
 
-systemctl enable payment 
+systemctl enable payment &>>$LOGFILE
 
 Validate $? "Enabling Payment service"
 
-systemctl start payment
+systemctl start payment &>>$LOGFILE
 
 Validate $? "Starting Payment service"
 
