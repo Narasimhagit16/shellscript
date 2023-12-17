@@ -29,7 +29,7 @@ Validate()
     fi
 }
 
-dnf install python36 gcc python3-devel -y
+dnf install python36 gcc python3-devel -y &>>$LOGFILE
 
 id roboshop &>>$LOGFILE
 
@@ -61,7 +61,7 @@ pip3.6 install -r requirements.txt &>>$LOGFILE
 Validate $? "Installing requirements"
 
 #vim /etc/systemd/system/payment.service
-cp -o /home/centos/shellscript/RoboshopShell/payment.service /etc/systemd/system/payment.service &>>$LOGFILE
+cp  /home/centos/shellscript/RoboshopShell/payment.service  /etc/systemd/system/payment.service &>>$LOGFILE
 
 Validate $? "Copying payment service"
 
