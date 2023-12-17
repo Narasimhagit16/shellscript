@@ -56,48 +56,41 @@ mkdir -p /app &>>$LOGFILE
 
 Validate $? "Creating app directory"
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>$LOGFILE
+curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
 
-Validate $? "Downloading Catalogue Application code"
+Validate $? "Unzipping user appliaction"
 
 cd /app &>>$LOGFILE
 
-Validate $? "Changing app directory"
 
-unzip -o /tmp/catalogue.zip &>>$LOGFILE
-
-Validate $? "Unzipping Catalogue Application code"
+Validate $? "Change directory to app"
 
 npm install &>>$LOGFILE
 
-Validate $? "Installing dependncies"
+Validate $? "Resolving dependencies using npm"
 
-#vim /etc/systemd/system/catalogue.service
-
-cp /home/centos/shellscript/RoboshopShell/catalogue.service /etc/systemd/system/catalogue.service
-
-Validate $? "copying catalogue serive"
+#vim /etc/systemd/system/user.service
 
 systemctl daemon-reload &>>$LOGFILE
 
 Validate $? "Reload daemon"
 
-systemctl enable catalogue &>>$LOGFILE
+systemctl enable user &>>$LOGFILE
 
-Validate $? "Enabling Catalogue service"
+Validate $? "Enable user appliaction"
 
-systemctl start catalogue &>>$LOGFILE
+systemctl start user &>>$LOGFILE
 
-Validate $? "Starting Catalogue service"
+Validate $? "starting user application"
 
+#vim /etc/yum.repos.d/mongo.repo :: it is already there, no need to create again, just use it
 cp /home/centos/shellscript/RoboshopShell/mongo.repo  /etc/yum.repos.d/mongo.repo &>>$LOGFILE
-
-Validate $? "Copying mongo repo file"
 
 dnf install mongodb-org-shell -y &>>$LOGFILE
 
-Validate $? "Intsalling mongo client"
+Validate $? "installing mongo DB client"
 
-mongo --host mongodb.nariops.online </app/schema/catalogue.js &>>$LOGFILE
+mongo --host mongodb.nariops.online </app/schema/user.js &>>$LOGFILE
 
-Validate $? "Loading schema into MongoDB"
+Validate $? "Loading user Schema"
+
