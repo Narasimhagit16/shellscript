@@ -35,6 +35,10 @@ Validate $? "Disable current mysql version"
 
 #vim /etc/yum.repos.d/mysql.repo
 
+cp /home/centos/shellscript/RoboshopShell/mysql.repo /etc/yum.repos.d/mysql.repo
+
+Validate $? "Copying mysql repo file"
+
 dnf install mysql-community-server -y &>>$LOGFILE
 
 Validate $? "Setup the MySQL5.7 repo file"
