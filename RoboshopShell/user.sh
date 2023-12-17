@@ -73,6 +73,9 @@ npm install &>>$LOGFILE
 Validate $? "Resolving dependencies using npm"
 
 #vim /etc/systemd/system/user.service
+cp /home/centos/shellscript/RoboshopShell/user.service /etc/systemd/system/user.service &>>$LOGFILE
+
+Validate $? "Copying user service"
 
 systemctl daemon-reload &>>$LOGFILE
 
