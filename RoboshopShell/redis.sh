@@ -29,11 +29,11 @@ Validate()
     fi
 }
 
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$LOGFILE
 
 Validate $? "downloding remi repo"
 
-dnf module enable redis:remi-6.2 -y
+dnf module enable redis:remi-6.2 -y &>>$LOGFILE
 
 Validate $? "enabling Redis"
 
@@ -43,7 +43,7 @@ Validate $? "Installing redis"
 
 #vim /etc/redis.conf
 
-sed  -i '/s/127.0.0.1/0.0.0.1/g' etc/redis/redis.conf &>>$LOGFILE
+sed  -i 's/127.0.0.1/0.0.0.0/g' etc/redis/redis.conf &>>$LOGFILE
 
 Validate $? "Giving remote access to Redis DB" 
 

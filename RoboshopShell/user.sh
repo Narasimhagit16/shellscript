@@ -56,7 +56,7 @@ mkdir -p /app &>>$LOGFILE
 
 Validate $? "Creating app directory"
 
-curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
+curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>>$LOGFILE
 
 Validate $? "Unzipping user appliaction"
 
@@ -64,7 +64,7 @@ cd /app &>>$LOGFILE
 
 Validate $? "Change directory to app"
 
-unzip -o /tmp/user.zip
+unzip -o /tmp/user.zip &>>$LOGFILE
 
 Validate $? "Unzipping code to app"
 
