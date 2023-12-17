@@ -62,8 +62,11 @@ Validate $? "Unzipping user appliaction"
 
 cd /app &>>$LOGFILE
 
-
 Validate $? "Change directory to app"
+
+unzip -o /tmp/user.zip
+
+Validate $? "Unzipping code to app"
 
 npm install &>>$LOGFILE
 
