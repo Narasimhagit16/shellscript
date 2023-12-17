@@ -64,7 +64,7 @@ cd /app &>>$LOGFILE
 
 Validate $? "Changing directory to app directory"
 
-unzip /tmp/cart.zip &>>$LOGFILE
+unzip -o /tmp/cart.zip &>>$LOGFILE
 
 Validate $? "Unizipping cart code"
 
