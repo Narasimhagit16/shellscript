@@ -51,6 +51,6 @@ systemctl enable redis &>>$LOGFILE
 
 Validate $? "Enabling Redis"
 
-systemctl start Redis &>>$LOGFILE
+systemctl start redis &>>$LOGFILE
 
 Validate $? "Start Redis"
