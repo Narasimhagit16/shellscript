@@ -74,6 +74,10 @@ Validate $? "Resolve the dependencies using npm"
 
 #vim /etc/systemd/system/cart.service
 
+cp /home/centos/shellscript/RoboshopShell/cart.service /etc/systemd/system/cart.service &>>$LOGFILE
+
+Validate $? "Copying cart service"
+
 systemctl daemon-reload &>>$LOGFILE
 
 Validate $? "Reload the daemon"
