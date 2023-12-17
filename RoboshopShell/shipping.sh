@@ -40,7 +40,7 @@ else
     echo "roboshop user exist"
 fi
 
-mkdir /app
+mkdir -p /app
 
 Validate $? "Creating app directory"
 
