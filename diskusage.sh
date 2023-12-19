@@ -9,7 +9,7 @@ while IFS= read -r line
 do
     usage=$( echo "$line" ! awk '{print $6F}' | cut -d % -f1 )
     partition_name=$( echo "$line" ! awk '{print $6F}' )
-    if [ $usage -gt $DISK_THRESHOLD ]
+    if [ $usage -ge $DISK_THRESHOLD ]
     then
         $message+="High disk usage on $partition_name , $usage "
 
