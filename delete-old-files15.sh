@@ -6,13 +6,13 @@ mkdir -p $SOURCE_DIR
 
 cd /$SOURCE_DIR
 
-touch -t temp20200405.log 20200405
-touch -t temp20220405.log 20220405
-touch -t temp20230405.log 20230405
+touch -t  202004050000 temp20200405.log
+touch -t  202204050000 temp20220405.log
+touch -t  202304050000 temp20230405.log
 
-touch -t temp20231218.log 20231218
-touch -t temp20231215.log 20231215
-touch -t temp20231201.log 20231201
+touch -t  202312180000 temp20231218.log
+touch -t  202312150000 temp20231215.log
+touch -t  202312190000 temp20231201.log
 
 if [ ! -d $SOURCE_DIR ]
 then 
