@@ -10,7 +10,7 @@ SUBJECT=$5
 echo "body: $BODY"
 echo $TO_TEAM
 
-FINAL_BODY=$(sed -e "s/'TO_TEAM'/$TO_TEAM/g" template.html)
+FINAL_BODY=$(sed -e "s/'TO_TEAM'/${TO_TEAM}/g" template.html)
 
 #FINAL_BODY=$(sed -e "s/'TO_TEAM'/'$TO_TEAM'/g" -e "s/'ALERT_TYPE'/'$ALERT_TYPE'/g" -e "s/'BODY'/'$ESCAPE_BODY'/g" template.html)
 
