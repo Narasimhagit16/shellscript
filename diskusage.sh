@@ -8,7 +8,7 @@ message=""
 while IFS= read -r line
 do
     usage=$( echo "$line" | awk '{print $6F}' | cut -d % -f1 )
-    partition_name=$( echo "$line" ! awk '{print $6F}' )
+    partition_name=$( echo "$line" | awk '{print $6F}' )
     echo "$usage, $DISK_THRESHOLD"
     if [ $usage -ge $DISK_THRESHOLD ]
     then
