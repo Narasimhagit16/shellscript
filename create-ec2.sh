@@ -13,17 +13,20 @@ PrivateIpAddress=$(aws ec2 run-instances --image-id $AMI --count 1 --instance-ty
 
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE --change-batch '
 {
-                "Comment": "CREATE/DELETE/UPDATE",
-                 "Changes": [
-                     {
+    "Comment": "CREATE/DELETE/UPDATE",
+        "Changes": [
+                        {
                             "Action": "CREATE",
-                            "ResourceRecordSet": {
+                            "ResourceRecordSet": 
+                            {
                             "Name": "'$i'.'$DNS'",
                             "Type": "A",
-                            "TTL": 01,
+                            "TTL": 1,
                             "ResourceRecords": [{"Value": "'$PrivateIpAddress'"}]
                                   
-                            }}]
+                            }
+                        }
+                    ]
 }
   '
 

@@ -24,7 +24,8 @@ do
     --change-batch '
     {
         "Comment": "Creating a record set for cognito endpoint"
-        ,"Changes": [{
+        ,"Changes": [
+            {
         "Action"              : "CREATE"
         ,"ResourceRecordSet"  : {
             "Name"              : "'$i'.'$DOMAIN_NAME'"
