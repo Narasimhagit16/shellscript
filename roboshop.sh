@@ -1,8 +1,8 @@
 #!/bin/bash
 AMI=ami-03265a0778a880afb
 SG=sg-0173e5458efd4d9c1
-HOSTED_ZONE=Z0601407A5EHLIBKCO7P
-DNS=nariops.online
+ZONE_ID=Z0601407A5EHLIBKCO7P
+DOMAIN_NAME=nariops.online
 
 Servers=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
