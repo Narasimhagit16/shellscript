@@ -6,7 +6,7 @@ DNS=nariops.online
 
 Servers=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
-for I in {$Servers[@]}
+for I in "${Servers[@]}"
 do
     echo "------$I"
     if [ $I == "mongodb" ] || [ $I == "mysql" ] || [ $I == "shipping" ]
