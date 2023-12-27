@@ -4,7 +4,7 @@ SG_ID= #Securuty Group ID
 ZONE_ID= #Hoasted Zone ID
 DOMIAN_NAME= # Web server URL
 
-INSTANCES=INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
 for i in INSTANCES[#@]
 do
