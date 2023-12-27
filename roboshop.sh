@@ -4,10 +4,11 @@ SG=sg-0173e5458efd4d9c1
 HOSTED_ZONE=Z0601407A5EHLIBKCO7P
 DNS=nariops.online
 
-INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+Servers=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
 
-for I in INSTANCES[#@]
+for I in Servers[#@]
 do
+    echo "------$I"
     if [ $I == "mongodb" ] || [ $I == "mysql" ] || [ $I == "shipping" ]
     then
         INSTANCE_TYPE="t3.small"
